@@ -1,6 +1,6 @@
 'use client'
 // import { useNavigate } from "react-router-dom"
-import HomeImage from '../../assets/Images/HomeImage.avif'
+import HomeImage from '../../assets/Images/HomeImage.jpg'
 import { IoIosCloseCircle } from "react-icons/io";
 import { useState } from "react"
 import Header from './Header';
@@ -87,9 +87,4 @@ const Home: React.FC = () => {
 }
 
 export default Home
-      // <div className="bg-red-500">
-      //   user Home page
-        
-      // </div>
-      // <span>Name: {firstname}</span>
-      // <button className="text-white bg-black" onClick={handleLogout}>Logout</button>
+

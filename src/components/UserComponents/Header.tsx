@@ -1,13 +1,9 @@
 import { FaRobot } from 'react-icons/fa'
-import { useSelector } from 'react-redux'
-import { RootState } from '../../Redux/Store'
 import React from 'react'
 import Profile from './Profile'
 
 const Header: React.FC = () => {
 
-    const selector = useSelector((state: RootState) => state.user.poumkiUserDetails)
-    const firstname: string = selector?.firstname ?? "Guest"
 
     return (
         <nav className="flex justify-between items-center p-6 bg-white shadow-md">

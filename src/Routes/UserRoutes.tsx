@@ -2,8 +2,8 @@ import { Route, Routes } from 'react-router-dom'
 import HomePage from '../Pages/UserPages/HomePage'
 import RegisterPage from '../Pages/UserPages/RegisterPage'
 import LoginPage from '../Pages/UserPages/LoginPage'
-import ProtectRoutes from './UserProtect/ProtectRoutes'
-import UserPublic from './UserProtect/UserPublic'
+import ProtectRoutes from './UserSecure/ProtectRoutes'
+import UserPublic from './UserSecure/UserPublic'
 import React from 'react'
 
 const UserRoutes:React.FC = () => {
