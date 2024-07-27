@@ -1,16 +1,28 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 
-const INITIAL_STATE = {
-    poumkiUserDetails: {},
-}
+
+
+export interface UserDetails {
+    firstname: string;
+    lastname: string;
+    email: string;
+    token: string
+  }
+  
+export interface UserState {
+    poumkiUserDetails: UserDetails | null;
+  }
+  
+  const INITIAL_STATE: UserState = {
+    poumkiUserDetails: null,
+  };
 
 export const userSlice = createSlice({
     name: "user",
     initialState: INITIAL_STATE,
     reducers: {
-        setUserDetails: (state, action) => {
+        setUserDetails: (state, action: PayloadAction<UserDetails>) => {
             state.poumkiUserDetails = action.payload;
-            console.log(action.payload,'-----------------------------------');
         },
         resetState: () => {
             return INITIAL_STATE;
@@ -20,6 +32,6 @@ export const userSlice = createSlice({
 
 })
 
-export const { setUserDetails, resetState } = userSlice.actions; 
+export const { setUserDetails, resetState } = userSlice.actions;
 
 export default userSlice.reducer;

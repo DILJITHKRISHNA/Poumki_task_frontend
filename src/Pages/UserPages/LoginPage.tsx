@@ -1,6 +1,7 @@
+import React from "react"
 import Login from "../../components/UserComponents/login"
 
-const LoginPage = () => {
+const LoginPage: React.FC = () => {
   return (
     <div>
       <Login/>

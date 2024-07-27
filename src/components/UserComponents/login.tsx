@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify"
 import LoginLoop from '../../assets/LoginLoop.mp4'
@@ -10,7 +10,8 @@ interface LoginData {
     password: string;
 }
 
-const login = () => {
+
+const login: React.FC = () => {
 
     const navigate = useNavigate()
     const dispatch = useDispatch()

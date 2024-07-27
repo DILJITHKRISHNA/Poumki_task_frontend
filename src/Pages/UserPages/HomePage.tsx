@@ -1,6 +1,7 @@
+import React from "react"
 import Home from "../../components/UserComponents/Home"
 
-const HomePage = () => {
+const HomePage: React.FC = () => {
   return (
     <div>
       <Home/>

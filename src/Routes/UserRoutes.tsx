@@ -4,8 +4,9 @@ import RegisterPage from '../Pages/UserPages/RegisterPage'
 import LoginPage from '../Pages/UserPages/LoginPage'
 import ProtectRoutes from './UserProtect/ProtectRoutes'
 import UserPublic from './UserProtect/UserPublic'
+import React from 'react'
 
-const UserRoutes = () => {
+const UserRoutes:React.FC = () => {
 
     return (
         <div>

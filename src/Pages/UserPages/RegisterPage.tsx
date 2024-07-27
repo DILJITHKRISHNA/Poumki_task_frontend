@@ -1,6 +1,7 @@
+import React from "react"
 import Register from "../../components/UserComponents/Register"
 
-const RegisterPage = () => {
+const RegisterPage: React.FC = () => {
   return (
     <div>
       <Register/>

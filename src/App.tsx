@@ -1,9 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import UserRoutes from './Routes/UserRoutes'
 import AdminRoutes from './Routes/AdminRoutes'
+import React from 'react'
 // import './App.css'
 
-function App() {
+const App: React.FC = () => {
 
   return (
     <>
