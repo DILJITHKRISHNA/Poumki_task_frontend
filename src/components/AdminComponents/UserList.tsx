@@ -5,6 +5,8 @@ import Sidebar from './Sidebar';
 import Header from './Header';
 import { FaUser } from 'react-icons/fa';
 import userImg from '../../assets/Images/user.png'
+// import { useSelector } from 'react-redux';
+// import { RootState } from '../../Redux/Store';
 
 interface UserDetails {
     _id: string
@@ -17,6 +19,8 @@ interface UserDetails {
 const UserList: React.FC = () => {
 
     const [allUsers, setAllUsers] = useState<UserDetails[]>([]);
+    // const selector = useSelector((state: RootState) => state.user.poumkiUserDetails) as UserDetails | null
+
 
     useEffect(() => {
         const fetchUser = async (): Promise<void> => {
@@ -48,9 +52,7 @@ const UserList: React.FC = () => {
             const data = await response.json();
             if (data.success === true) {
                 setAllUsers(data.deleteAllusers);
-                setTimeout(() => {
-                    toast.success('Deleted all users!')
-                }, 2000);
+                toast.success('Deleted all users!')
             }
         } catch (error) {
             console.log(error);
@@ -68,11 +70,9 @@ const UserList: React.FC = () => {
             })
             const data = await response.json();
             if (data.success === true) {
-                alert("heyy")
+
                 setAllUsers(data.deleteuser);
-                setTimeout(() => {
-                    toast.success(`Deleted ${data.deleteuser.firstname}!`)
-                }, 2000);
+                toast.success(`Deleted ${data.deleteuser.firstname}!`)
             }
         } catch (error) {
             console.log(error);
@@ -80,13 +80,14 @@ const UserList: React.FC = () => {
         }
     }
 
+
     return (
         <div className="flex flex-col w-full">
             <Header />
             <div className="flex justify-center">
                 <Sidebar />
                 {allUsers.length > 0 ? (
-                    <div className="overflow-y-hidden rounded-lg pt-12 bg-offgreen mr-2 mx-auto h-auto w-screen sm:px-10 bg-gray-100">
+                    <div className="overflow-y-hidden rounded-lg pt-12 bg-offgreen mr-2 mx-auto h-auto w-screen sm:px-10 bg-gray-200">
                         <div className='flex flex-row items-center justify-between mb-2'>
                             <div className='flex  lg:flex-row flex-col'>
                                 <h1 className='font-semibold text-xl uppercase font-mono flex flex-row gap-2 mb-2'>
@@ -94,7 +95,7 @@ const UserList: React.FC = () => {
                                     User List
                                 </h1>
                             </div>
-                            <span className='sm:ml-[14rem] ml-16 '>Are you sure to delete all users? <button className='underline text-red-500' onClick={HandleDeleteAllusers}>Delete All</button></span>
+                            <span className='sm:ml-[14rem] ml-16 '>Are you sure to delete all users? <button className='underline text-red-500 transform transition-transform duration-300 ease-in-out hover:scale-105' onClick={HandleDeleteAllusers}>Delete All</button></span>
                         </div>
                         <div className="overflow-x-auto">
                             <table className="w-full">
@@ -131,10 +132,12 @@ const UserList: React.FC = () => {
                                                 <p className="whitespace-no-wrap">{user.email}</p>
                                             </td>
                                             <td className="border-gray-200 bg-white px-1 py-5 text-sm">
-                                                <p className="whitespace-no-wrap">{user.createdAt}</p>
+                                                <p className="whitespace-no-wrap">
+                                                    {new Date(user.createdAt).toLocaleString()}
+                                                </p>
                                             </td>
                                             <td className="border-gray-200 bg-white px-1 py-5 text-sm">
-                                                <button className="whitespace-no-wrap bg-black font-semibold p-2 rounded-md text-white" onClick={(e) => handleDeleteById(e, user._id)}>Delete</button>
+                                                <button className="whitespace-no-wrap bg-black font-semibold p-2 rounded-md text-white transform transition-transform duration-300 ease-in-out hover:scale-105" onClick={(e) => handleDeleteById(e, user._id)}>Delete</button>
                                             </td>
                                         </tr>
                                     ))}

@@ -57,6 +57,7 @@ const login: React.FC = () => {
                 if (data.success == true) {
                     localStorage.setItem('poumki_user_tok', data.token)
                     dispatch(setUserDetails({
+                        id: data.existingUser._id,
                         email: data.existingUser.email,
                         firstname: data.existingUser.firstname,
                         lastname: data.existingUser.lastname,
