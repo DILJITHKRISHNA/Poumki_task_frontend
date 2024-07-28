@@ -105,7 +105,7 @@ const UserList: React.FC = () => {
                                         <th className="px-5 py-3">First Name</th>
                                         <th className="px-5 py-3">Last Name</th>
                                         <th className="px-5 py-3">Email</th>
-                                        <th className="px-5 py-3">Date</th>
+                                        <th className="px-5 py-3">Date & Time</th>
                                         <th className="px-5 py-3">Delete</th>
                                     </tr>
                                 </thead>
