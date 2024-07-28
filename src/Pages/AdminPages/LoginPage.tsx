@@ -3,7 +3,7 @@ import Adminlogin from "../../components/AdminComponents/login"
 const LoginPage = () => {
   return (
     <div>
-      <Adminlogin/>
+      <Adminlogin />
     </div>
   )
 }

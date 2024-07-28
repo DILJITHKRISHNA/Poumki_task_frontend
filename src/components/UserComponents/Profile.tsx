@@ -35,10 +35,10 @@ const Profile: React.FC = () => {
                 });
                 const data = await response.json();
                 console.log(data);
-                
-                if(data.success === true){
+
+                if (data.success === true) {
                     setUsername(data.user.firstname)
-                }else{
+                } else {
                     localStorage.removeItem("poumki_user_tok")
                     navigate('/login')
                 }

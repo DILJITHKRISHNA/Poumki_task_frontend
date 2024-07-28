@@ -6,7 +6,7 @@ import ProtectRoutes from './UserSecure/ProtectRoutes'
 import UserPublic from './UserSecure/UserPublic'
 import React from 'react'
 
-const UserRoutes:React.FC = () => {
+const UserRoutes: React.FC = () => {
 
     return (
         <div>

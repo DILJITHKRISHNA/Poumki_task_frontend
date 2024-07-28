@@ -5,8 +5,7 @@ import Sidebar from './Sidebar';
 import Header from './Header';
 import { FaUser } from 'react-icons/fa';
 import userImg from '../../assets/Images/user.png'
-// import { useSelector } from 'react-redux';
-// import { RootState } from '../../Redux/Store';
+
 
 interface UserDetails {
     _id: string
@@ -19,8 +18,6 @@ interface UserDetails {
 const UserList: React.FC = () => {
 
     const [allUsers, setAllUsers] = useState<UserDetails[]>([]);
-    // const selector = useSelector((state: RootState) => state.user.poumkiUserDetails) as UserDetails | null
-
 
     useEffect(() => {
         const fetchUser = async (): Promise<void> => {
